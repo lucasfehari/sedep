@@ -1,0 +1,198 @@
+/* ==========================================================================
+   SEDEP — Utilities
+   Mínimas e conscientes. Cada utility existe porque é usada repetidamente
+   com intenção consistente. Não é Tailwind.
+   ========================================================================== */
+
+/* ==========================================================================
+   CONTAINER — O coração do grid
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Container estreito — para texto editorial, formulários */
+.container--narrow {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Container largo — para grids que precisam de mais espaço */
+.container--wide {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* ==========================================================================
+   GRID — Dois sistemas: simétrico e assimétrico
+   ========================================================================== */
+
+/* Grid simétrico — colunas iguais */
+.grid {
+  display: grid;
+  gap: var(--grid-gutter);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Grid assimétrico — para composições editoriais */
+.grid-split {
+  display: grid;
+  grid-template-columns: var(--split-primary) var(--split-secondary);
+  gap: var(--grid-gutter);
+  align-items: start;
+}
+
+.grid-split--reverse {
+  grid-template-columns: var(--split-secondary) var(--split-primary);
+}
+
+.grid-split--center {
+  align-items: center;
+}
+
+/* Mobile: grids colapsam para coluna única */
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .grid-split,
+  .grid-split--reverse {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+  .grid-split,
+  .grid-split--reverse {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   SECTION — Espaçamento vertical
+   ========================================================================== */
+
+.section {
+  padding-top: var(--section-spacing-md);
+  padding-bottom: var(--section-spacing-md);
+}
+
+.section--sm {
+  padding-top: var(--section-spacing-sm);
+  padding-bottom: var(--section-spacing-sm);
+}
+
+.section--lg {
+  padding-top: var(--section-spacing-lg);
+  padding-bottom: var(--section-spacing-lg);
+}
+
+/* ==========================================================================
+   FLEX HELPERS
+   ========================================================================== */
+
+.flex         { display: flex; }
+.flex-col     { display: flex; flex-direction: column; }
+.flex-center  { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-start   { display: flex; align-items: flex-start; }
+.flex-end     { display: flex; align-items: center; justify-content: flex-end; }
+.gap-2  { gap: var(--space-2); }
+.gap-3  { gap: var(--space-3); }
+.gap-4  { gap: var(--space-4); }
+.gap-6  { gap: var(--space-6); }
+.gap-8  { gap: var(--space-8); }
+.gap-12 { gap: var(--space-12); }
+
+/* ==========================================================================
+   SURFACE — Fundos de seção
+   ========================================================================== */
+
+.bg-surface      { background-color: var(--color-surface); }
+.bg-surface-alt  { background-color: var(--color-surface-alt); }
+.bg-dark         { background-color: var(--color-surface-dark); }
+.bg-blue-light   { background-color: var(--color-sedep-blue-light); }
+
+/* ==========================================================================
+   DIVISORES
+   ========================================================================== */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.divider--accent {
+  width: 48px;
+  height: 2px;
+  background-color: var(--color-accent);
+  margin-bottom: var(--space-6);
+}
+
+/* ==========================================================================
+   VISIBILIDADE
+   ========================================================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.hide-mobile  { display: none; }
+.hide-desktop { display: block; }
+
+@media (min-width: 769px) {
+  .hide-mobile  { display: block; }
+  .hide-desktop { display: none; }
+}
+
+/* ==========================================================================
+   ANIMAÇÕES — Reveal ao scroll (classe aplicada via JS)
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "sedep",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxtjs/seo": "^2.0.4",
+    "nuxt": "^4.5.2",
+    "vee-validate": "^4.14.8",
+    "vue": "^3.5.41",
+    "vue-router": "^5.2.0",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "@lucide/vue": "^1.31.0",
+    "@vueuse/core": "^12.7.0",
+    "lucide-vue-next": "^0.525.0",
+    "typescript": "^5.8.3"
+  }
+}

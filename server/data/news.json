@@ -1,0 +1,104 @@
+[
+  {
+    "id": "art-001",
+    "title": "A Revolução da Inteligência Artificial Generativa na Rotina dos Escritórios de Advocacia",
+    "slug": "ia-generativa-rotina-escritorios-advocacia",
+    "category": "Inteligência Artificial",
+    "tags": [
+      "IA Jurídica",
+      "Automação",
+      "Produtividade",
+      "Sedep Faz"
+    ],
+    "excerpt": "Como modelos preditivos e IA generativa estão redefinindo a triagem de publicações, elaboração de minutas e previsão de prazos na advocacia de alto rendimento.",
+    "content": "<p>A transformação digital no meio jurídico atingiu um ponto de inflexão definitivo. A aplicação prática da <strong>Inteligência Artificial Generativa</strong> e dos modelos de análise preditiva deixou de ser um diferencial prospectivo para se consolidar como o alicerce operacional dos escritórios de advocacia que buscam escala e precisão inegociável.</p><h2>1. Do processamento passivo à antecipação estratégica</h2><p>Historicamente, a rotina de um escritório centrava-se no acompanhamento reativo: publicações eram lidas após a publicação em Diários Oficiais e prazos eram contados manualmente em planilhas ou sistemas legados. Com as ferramentas desenvolvidas pela <strong>SEDEP</strong>, a leitura e classificação de intimações tornam-se instantâneas.</p><blockquote><p>\"A tecnologia não substitui o raciocínio jurídico de excelência, mas elimina 100% da fricção operacional e do erro humano em tarefas repetitivas.\"</p></blockquote><h2>2. Segurança de dados e conformidade (LGPD & Cyber Security)</h2><p>Ao incorporar inteligência artificial na rotina jurídica, a custódia das informações confidenciais de clientes e processos é a principal diretriz. Ambientes corporativos em nuvem isolada e criptografia de ponta a ponta são requisitos indispensáveis para garantir que dados sensíveis nunca sejam expostos.</p><h2>3. O Futuro da Gestão Jurídica</h2><p>Com o ecossistema <strong>Sedep Faz</strong> e a inteligência do <strong>LegalLake</strong>, advogados ganham horas diárias dedicadas à estratégia processual e ao relacionamento consultivo com seus clientes.</p>",
+    "coverImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
+    "author": {
+      "name": "Equipe de Engenharia SEDEP",
+      "role": "P&D e Inovação Jurídica",
+      "avatar": "/sedep-branco.png"
+    },
+    "status": "published",
+    "publishedAt": "2026-08-20T10:00:00.000Z",
+    "updatedAt": "2026-08-20T10:00:00.000Z",
+    "readingTime": 5,
+    "views": 346,
+    "seo": {
+      "metaTitle": "IA Generativa na Rotina dos Escritórios de Advocacia | SEDEP",
+      "metaDescription": "Descubra como a Inteligência Artificial e automação de publicações estão transformando a produtividade e a segurança em escritórios de advocacia.",
+      "focusKeyword": "inteligência artificial advocacia",
+      "canonicalUrl": "https://www.sedep.com.br/noticias/ia-generativa-rotina-escritorios-advocacia",
+      "robots": "index, follow",
+      "ogImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
+      "schemaType": "NewsArticle"
+    }
+  },
+  {
+    "id": "art-002",
+    "title": "Legal Data Lakes: Como Analisar 800 Milhões de Processos em Tempo Real",
+    "slug": "legal-data-lakes-analise-800-milhoes-processos",
+    "category": "Software Jurídico",
+    "tags": [
+      "LegalLake",
+      "Big Data",
+      "Jurimetria",
+      "Analytics"
+    ],
+    "excerpt": "A jurimetria avançada e a estruturação de grandes volumes de dados processuais permitem antecipar decisões, estimar riscos e fundamentar teses com dados concretos.",
+    "content": "<p>A tomada de decisão baseada em dados (<em>Data-Driven Law</em>) é hoje o divisor de águas entre bancas tradicionais e operações jurídicas de alta performance. Com o <strong>LegalLake da SEDEP</strong>, escritórios e departamentos jurídicos acessam um repositório estruturado de mais de 800 milhões de processos distribuídos em todos os tribunais do Brasil.</p><h2>O Poder da Jurimetria Aplicada</h2><p>Compreender o perfil decisório de magistrados, tendências jurisprudenciais em varas específicas e o histórico de partes litigantes reduz a incerteza jurídica e capacita negociações mais vantajosas.</p><h2>Vantagens Competitivas:</h2><ul><li>Mapeamento de tendências de julgamento por tribunal e comarca</li><li>Auditoria preditiva de passivo judicial para grandes corporações</li><li>Consultas ultra-rápidas através de indexação vetorial e semântica</li></ul>",
+    "coverImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+    "author": {
+      "name": "Lucas Fehari",
+      "role": "Arquiteto de Soluções SEDEP",
+      "avatar": "/sedep-branco.png"
+    },
+    "status": "published",
+    "publishedAt": "2026-08-15T14:30:00.000Z",
+    "updatedAt": "2026-08-15T14:30:00.000Z",
+    "readingTime": 4,
+    "views": 220,
+    "seo": {
+      "metaTitle": "Legal Data Lakes e Jurimetria com 800M de Processos | SEDEP",
+      "metaDescription": "Como o LegalLake da SEDEP estrutura mais de 800 milhões de processos para transformar jurimetria em vantagem estratégica.",
+      "focusKeyword": "jurimetria legal data lake",
+      "canonicalUrl": "https://www.sedep.com.br/noticias/legal-data-lakes-analise-800-milhoes-processos",
+      "robots": "index, follow",
+      "ogImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+      "schemaType": "TechArticle"
+    }
+  },
+  {
+    "id": "art-003",
+    "title": "Cyber Security e LGPD na Advocacia: Diretrizes para Blindagem de Escritórios",
+    "slug": "cyber-security-lgpd-blindagem-escritorios-advocacia",
+    "category": "Cyber Security",
+    "tags": [
+      "Segurança da Informação",
+      "LGPD",
+      "Proteção de Dados",
+      "SOC"
+    ],
+    "excerpt": "Escritórios de advocacia são alvos prioritários de ciberataques. Entenda os pilares de segurança, criptografia e conformidade necessários para blindar sua operação.",
+    "content": "<p>A guarda de documentos confidenciais, estratégias corporativas, segredos de negócio e dados pessoais sensíveis coloca os escritórios de advocacia no radar de atacantes cibernéticos e ransomwares. Garantir a integridade dessa custódia é uma exigência ética, regulatória e comercial.</p><h2>Pilares da Blindagem Digital SEDEP</h2><p>Na SEDEP, a segurança da informação é implementada como arquitetura de <em>Zero Trust</em>, garantindo que nenhum acesso seja concedido sem verificação contínua e autenticação robusta.</p>",
+    "coverImage": "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop",
+    "author": {
+      "name": "Centro de Segurança SEDEP",
+      "role": "Especialistas em Cyber Defense",
+      "avatar": "/sedep-branco.png"
+    },
+    "status": "published",
+    "publishedAt": "2026-08-10T09:15:00.000Z",
+    "updatedAt": "2026-08-10T09:15:00.000Z",
+    "readingTime": 6,
+    "views": 189,
+    "seo": {
+      "metaTitle": "Cyber Security e LGPD para Escritórios de Advocacia | SEDEP",
+      "metaDescription": "Conheça as diretrizes essenciais de Cyber Security e LGPD para proteger dados confidenciais e blindar sistemas jurídicos contra ataques.",
+      "focusKeyword": "cyber security advocacia lgpd",
+      "canonicalUrl": "https://www.sedep.com.br/noticias/cyber-security-lgpd-blindagem-escritorios-advocacia",
+      "robots": "index, follow",
+      "ogImage": "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop",
+      "schemaType": "NewsArticle"
+    }
+  }
+]

@@ -1,0 +1,126 @@
+/* ==========================================================================
+   SEDEP — SaaS Typography (Plus Jakarta Sans + Inter)
+   Modern, crisp, high-contrast, perfectly balanced
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-ink);
+}
+
+h1 {
+  font-size: var(--text-hero);
+  font-weight: var(--font-weight-extrabold);
+}
+
+h2 {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h4 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+h5 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+h6 {
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Corpo de texto */
+p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--line-height-body);
+  color: var(--color-ink-medium);
+}
+
+.lead {
+  font-size: var(--text-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-ink-light);
+  font-weight: var(--font-weight-regular);
+}
+
+.caption {
+  font-size: var(--text-sm);
+  line-height: var(--line-height-normal);
+  color: var(--color-ink-light);
+}
+
+/* SaaS Badge / Tag */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-6);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.badge-pill:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+
+.badge-tag--blue {
+  background-color: var(--color-faz-light);
+  color: var(--color-faz);
+}
+
+.badge-tag--green {
+  background-color: var(--color-green-light);
+  color: var(--color-themis-green);
+}
+
+.badge-tag--navy {
+  background-color: var(--color-legallake-light);
+  color: var(--color-legallake);
+}
+
+.badge-tag--purple {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}

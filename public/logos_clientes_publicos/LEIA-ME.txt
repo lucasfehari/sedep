@@ -1,0 +1,16 @@
+Pacote de logos institucionais em PNG
+
+Arquivos incluídos:
+- agesul.png
+- prefeitura-aquidauana.png
+- prefeitura-navirai.png
+- prefeitura-ponta-pora.png
+- prefeitura-campo-grande.png
+- crea-mt.png
+- prefeitura-bonito.png
+- caixa-economica-federal.png
+- prefeitura-botucatu.png
+- prefeitura-cubatao.png
+- prefeitura-paragominas.png
+
+Observação: as imagens foram convertidas para PNG e mantidas nas dimensões das fontes encontradas. Antes de publicar, confirme as diretrizes de uso de marca e, se necessário, substitua por arquivos oficiais de maior resolução/versão vigente.
