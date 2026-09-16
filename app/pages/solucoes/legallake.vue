@@ -4,7 +4,7 @@
       <div class="container">
         <p class="section-label section-label--light">Pesquisa Jurídica</p>
         <div class="product-hero__brand-header" style="margin-bottom: 1rem;">
-          <img src="/logo_legallake.png" alt="LegalLake" class="product-hero__logo" width="220" height="54" style="height: 48px; width: auto; object-fit: contain;" />
+          <img src="/logo_legallake.png" alt="LegalLake" class="product-hero__logo" width="220" height="54" style="height: 48px; width: auto; object-fit: contain; filter: brightness(0);" />
         </div>
         <h1 id="ll-heading" class="sr-only">LegalLake</h1>
         <p class="lead">

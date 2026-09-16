@@ -45,9 +45,15 @@
   gap: var(--grid-gutter);
 }
 
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
 
 /* Grid assimétrico — para composições editoriais */
 .grid-split {
@@ -77,8 +83,12 @@
 }
 
 @media (max-width: 1024px) {
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   .grid-split,
   .grid-split--reverse {
@@ -109,27 +119,67 @@
    FLEX HELPERS
    ========================================================================== */
 
-.flex         { display: flex; }
-.flex-col     { display: flex; flex-direction: column; }
-.flex-center  { display: flex; align-items: center; justify-content: center; }
-.flex-between { display: flex; align-items: center; justify-content: space-between; }
-.flex-start   { display: flex; align-items: flex-start; }
-.flex-end     { display: flex; align-items: center; justify-content: flex-end; }
-.gap-2  { gap: var(--space-2); }
-.gap-3  { gap: var(--space-3); }
-.gap-4  { gap: var(--space-4); }
-.gap-6  { gap: var(--space-6); }
-.gap-8  { gap: var(--space-8); }
-.gap-12 { gap: var(--space-12); }
+.flex {
+  display: flex;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-start {
+  display: flex;
+  align-items: flex-start;
+}
+.flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.gap-2 {
+  gap: var(--space-2);
+}
+.gap-3 {
+  gap: var(--space-3);
+}
+.gap-4 {
+  gap: var(--space-4);
+}
+.gap-6 {
+  gap: var(--space-6);
+}
+.gap-8 {
+  gap: var(--space-8);
+}
+.gap-12 {
+  gap: var(--space-12);
+}
 
 /* ==========================================================================
    SURFACE — Fundos de seção
    ========================================================================== */
 
-.bg-surface      { background-color: var(--color-surface); }
-.bg-surface-alt  { background-color: var(--color-surface-alt); }
-.bg-dark         { background-color: var(--color-surface-dark); }
-.bg-blue-light   { background-color: var(--color-sedep-blue-light); }
+.bg-surface {
+  background-color: var(--color-surface);
+}
+.bg-surface-alt {
+  background-color: var(--color-surface-alt);
+}
+.bg-dark {
+  background-color: var(--color-surface-dark);
+}
+.bg-blue-light {
+  background-color: var(--color-sedep-blue-light);
+}
 
 /* ==========================================================================
    DIVISORES
@@ -164,12 +214,20 @@
   border-width: 0;
 }
 
-.hide-mobile  { display: none; }
-.hide-desktop { display: block; }
+.hide-mobile {
+  display: none;
+}
+.hide-desktop {
+  display: block;
+}
 
 @media (min-width: 769px) {
-  .hide-mobile  { display: block; }
-  .hide-desktop { display: none; }
+  .hide-mobile {
+    display: block;
+  }
+  .hide-desktop {
+    display: none;
+  }
 }
 
 /* ==========================================================================

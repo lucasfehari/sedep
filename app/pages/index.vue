@@ -18,8 +18,7 @@
     <!-- 6. Tabela de Planos e Preços (Mensal / Anual) -->
     <SectionPricing />
 
-    <!-- 7. Depoimentos de Profissionais e Histórias Reais -->
-    <SectionTestimonials />
+
 
     <!-- 8. Carrossel de Clientes do Setor Público & Órgãos de Governo -->
     <SectionPublicClients />
@@ -40,13 +39,15 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'default',
-})
+  layout: "default",
+});
 
 useSeoMeta({
-  title: 'SEDEP — Softwares de Gestão Jurídica com Inteligência Integrada',
-  ogTitle: 'SEDEP — Softwares de Gestão Jurídica com Inteligência Integrada',
-  description: 'Conheça os softwares jurídicos e soluções de inteligência da SEDEP: Sedep Faz e LegalLake. Gestão completa, automações de prazos, andamentos e +800M de processos.',
-  ogDescription: 'Conheça os softwares jurídicos e soluções de inteligência da SEDEP: Sedep Faz e LegalLake. Gestão completa, automações de prazos, andamentos e +800M de processos.',
-})
+  title: "SEDEP — Softwares de Gestão Jurídica com Inteligência Integrada",
+  ogTitle: "SEDEP — Softwares de Gestão Jurídica com Inteligência Integrada",
+  description:
+    "Conheça os softwares jurídicos e soluções de inteligência da SEDEP: Sedep Faz e LegalLake. Gestão completa, automações de prazos, andamentos e +800M de processos.",
+  ogDescription:
+    "Conheça os softwares jurídicos e soluções de inteligência da SEDEP: Sedep Faz e LegalLake. Gestão completa, automações de prazos, andamentos e +800M de processos.",
+});
 </script>

@@ -1,7 +1,10 @@
 <template>
-  <section class="pricing section" id="planos" aria-labelledby="pricing-heading">
+  <section
+    class="pricing section"
+    id="planos"
+    aria-labelledby="pricing-heading"
+  >
     <div class="container">
-
       <!-- Header da Seção de Planos com Switch Mensal/Anual -->
       <div class="pricing__top">
         <div class="pricing__title-wrap">
@@ -10,11 +13,17 @@
         </div>
 
         <!-- Toggle Switch Mensal / Anual -->
-        <div class="pricing__billing-toggle" role="group" aria-label="Frequência de pagamento">
+        <div
+          class="pricing__billing-toggle"
+          role="group"
+          aria-label="Frequência de pagamento"
+        >
           <button
             type="button"
             class="billing-toggle__btn"
-            :class="{ 'billing-toggle__btn--active': billingCycle === 'monthly' }"
+            :class="{
+              'billing-toggle__btn--active': billingCycle === 'monthly',
+            }"
             @click="billingCycle = 'monthly'"
           >
             Mensal
@@ -22,7 +31,9 @@
           <button
             type="button"
             class="billing-toggle__btn"
-            :class="{ 'billing-toggle__btn--active': billingCycle === 'annual' }"
+            :class="{
+              'billing-toggle__btn--active': billingCycle === 'annual',
+            }"
             @click="billingCycle = 'annual'"
           >
             Anual
@@ -32,19 +43,22 @@
 
       <!-- Grid dos 4 Planos -->
       <div class="pricing__grid">
-
         <!-- 1. Plano Inicial -->
         <div class="pricing-card">
           <div class="pricing-card__header">
             <h3 class="pricing-card__name">Inicial</h3>
             <p class="pricing-card__target">
-              Ideal para advogados que precisam de um monitoramento eficiente, sem um sistema completo.
+              Ideal para advogados que precisam de um monitoramento eficiente,
+              sem um sistema completo.
             </p>
           </div>
 
           <div class="pricing-card__price-box">
             <span class="pricing-card__prefix">Por apenas</span>
-            <div class="pricing-card__price-row" v-if="billingCycle === 'annual'">
+            <div
+              class="pricing-card__price-row"
+              v-if="billingCycle === 'annual'"
+            >
               <span class="pricing-card__currency">R$</span>
               <span class="pricing-card__amount">62,90</span>
               <span class="pricing-card__period">(média mensal)</span>
@@ -54,14 +68,21 @@
               <span class="pricing-card__amount">69,90</span>
               <span class="pricing-card__period">/mês</span>
             </div>
-            <span class="pricing-card__annual-note" v-if="billingCycle === 'annual'">
-              R$ 754,80 ao ano! <span class="pricing-card__info-icon" title="Cobrado anualmente">ℹ</span>
+            <span
+              class="pricing-card__annual-note"
+              v-if="billingCycle === 'annual'"
+            >
+              R$ 754,80 ao ano!
+              <span class="pricing-card__info-icon" title="Cobrado anualmente"
+                >ℹ</span
+              >
             </span>
           </div>
 
           <div class="pricing-card__action">
             <BaseButton
-              to="/experimente?plano=inicial"
+              href="https://api.whatsapp.com/send?phone=5567998393633&text=Ol%C3%A1,%20preciso%20de%20ajuda"
+              target="_blank"
               variant="outline"
               size="md"
               class="pricing-card__btn pricing-card__btn--blue-light"
@@ -73,7 +94,14 @@
           <ul class="pricing-card__features" role="list">
             <li class="pricing-card__feature">
               <span class="pricing-card__check">✓</span>
-              <span>1 nomes para captura de publicações <span class="pricing-card__info-icon" title="Nome do advogado ou sociedade monitorada">ℹ</span></span>
+              <span
+                >1 nomes para captura de publicações
+                <span
+                  class="pricing-card__info-icon"
+                  title="Nome do advogado ou sociedade monitorada"
+                  >ℹ</span
+                ></span
+              >
             </li>
             <li class="pricing-card__feature">
               <span class="pricing-card__check">✓</span>
@@ -92,20 +120,22 @@
 
         <!-- 2. Plano Essencial (Mais Vendido) -->
         <div class="pricing-card pricing-card--featured">
-          <div class="pricing-card__badge-tag">
-            Mais vendido
-          </div>
+          <div class="pricing-card__badge-tag">Mais vendido</div>
 
           <div class="pricing-card__header">
             <h3 class="pricing-card__name">Essencial</h3>
             <p class="pricing-card__target">
-              Perfeito para pequenos escritórios que precisam de mais controle e automação.
+              Perfeito para pequenos escritórios que precisam de mais controle e
+              automação.
             </p>
           </div>
 
           <div class="pricing-card__price-box">
             <span class="pricing-card__prefix">Por apenas</span>
-            <div class="pricing-card__price-row" v-if="billingCycle === 'annual'">
+            <div
+              class="pricing-card__price-row"
+              v-if="billingCycle === 'annual'"
+            >
               <span class="pricing-card__currency">R$</span>
               <span class="pricing-card__amount">152,90</span>
               <span class="pricing-card__period">(média mensal)</span>
@@ -115,14 +145,21 @@
               <span class="pricing-card__amount">169,90</span>
               <span class="pricing-card__period">/mês</span>
             </div>
-            <span class="pricing-card__annual-note" v-if="billingCycle === 'annual'">
-              R$ 1.834,80 ao ano! <span class="pricing-card__info-icon" title="Cobrado anualmente">ℹ</span>
+            <span
+              class="pricing-card__annual-note"
+              v-if="billingCycle === 'annual'"
+            >
+              R$ 1.834,80 ao ano!
+              <span class="pricing-card__info-icon" title="Cobrado anualmente"
+                >ℹ</span
+              >
             </span>
           </div>
 
           <div class="pricing-card__action">
             <BaseButton
-              to="/experimente?plano=essencial"
+              href="https://www.sedep.com.br/faz/teste-gratis/?plano=essencial"
+              target="_blank"
               variant="primary"
               size="md"
               class="pricing-card__btn"
@@ -134,7 +171,14 @@
           <ul class="pricing-card__features" role="list">
             <li class="pricing-card__feature">
               <span class="pricing-card__check">✓</span>
-              <span>1 nomes para captura de publicações <span class="pricing-card__info-icon" title="Monitoramento de publicações oficiais">ℹ</span></span>
+              <span
+                >1 nomes para captura de publicações
+                <span
+                  class="pricing-card__info-icon"
+                  title="Monitoramento de publicações oficiais"
+                  >ℹ</span
+                ></span
+              >
             </li>
             <li class="pricing-card__feature">
               <span class="pricing-card__check">✓</span>
@@ -176,13 +220,17 @@
           <div class="pricing-card__header">
             <h3 class="pricing-card__name">Recomendado</h3>
             <p class="pricing-card__target">
-              Ideal para escritórios estruturados que lidam com alto volume de processos.
+              Ideal para escritórios estruturados que lidam com alto volume de
+              processos.
             </p>
           </div>
 
           <div class="pricing-card__price-box">
             <span class="pricing-card__prefix">Por apenas</span>
-            <div class="pricing-card__price-row" v-if="billingCycle === 'annual'">
+            <div
+              class="pricing-card__price-row"
+              v-if="billingCycle === 'annual'"
+            >
               <span class="pricing-card__currency">R$</span>
               <span class="pricing-card__amount">431,90</span>
               <span class="pricing-card__period">(média mensal)</span>
@@ -192,14 +240,21 @@
               <span class="pricing-card__amount">479,90</span>
               <span class="pricing-card__period">/mês</span>
             </div>
-            <span class="pricing-card__annual-note" v-if="billingCycle === 'annual'">
-              R$ 5.182,80 ao ano! <span class="pricing-card__info-icon" title="Cobrado anualmente">ℹ</span>
+            <span
+              class="pricing-card__annual-note"
+              v-if="billingCycle === 'annual'"
+            >
+              R$ 5.182,80 ao ano!
+              <span class="pricing-card__info-icon" title="Cobrado anualmente"
+                >ℹ</span
+              >
             </span>
           </div>
 
           <div class="pricing-card__action">
             <BaseButton
-              to="/experimente?plano=recomendado"
+              href="https://www.sedep.com.br/faz/teste-gratis/?plano=recomendado"
+              target="_blank"
               variant="primary"
               size="md"
               class="pricing-card__btn"
@@ -211,7 +266,14 @@
           <ul class="pricing-card__features" role="list">
             <li class="pricing-card__feature">
               <span class="pricing-card__check">✓</span>
-              <span>2 nomes para captura de publicações <span class="pricing-card__info-icon" title="Monitoramento duplo">ℹ</span></span>
+              <span
+                >2 nomes para captura de publicações
+                <span
+                  class="pricing-card__info-icon"
+                  title="Monitoramento duplo"
+                  >ℹ</span
+                ></span
+              >
             </li>
             <li class="pricing-card__feature">
               <span class="pricing-card__check">✓</span>
@@ -253,7 +315,8 @@
           <div class="pricing-card__header">
             <h3 class="pricing-card__name">Personalizável</h3>
             <p class="pricing-card__target">
-              Para escritórios que precisam de uma solução adaptada às suas necessidades específicas. Valor sob consulta
+              Para escritórios que precisam de uma solução adaptada às suas
+              necessidades específicas. Valor sob consulta
             </p>
           </div>
 
@@ -269,7 +332,8 @@
 
           <div class="pricing-card__action">
             <BaseButton
-              to="/experimente?plano=personalizavel"
+              href="https://www.sedep.com.br/faz/teste-gratis/?plano=personalizado"
+              target="_blank"
               variant="primary"
               size="md"
               class="pricing-card__btn"
@@ -285,7 +349,10 @@
           <ul class="pricing-card__features" role="list">
             <li class="pricing-card__feature">
               <span class="pricing-card__check">✓</span>
-              <span>Quantidades de nomes para captura de publicações <span class="pricing-card__info-icon">ℹ</span></span>
+              <span
+                >Quantidades de nomes para captura de publicações
+                <span class="pricing-card__info-icon">ℹ</span></span
+              >
             </li>
             <li class="pricing-card__feature">
               <span class="pricing-card__check">✓</span>
@@ -305,30 +372,32 @@
             </li>
           </ul>
         </div>
-
       </div>
 
       <!-- Nota de Rodapé dos Módulos Extras -->
       <div class="pricing__footer-note">
         <p>
-          Todos os planos permitem a inclusão de módulos extras, sendo eles <strong>Assinatura Eletrônica</strong> – Agilidade e segurança na validação de documentos, <strong>CRM Jurídico</strong> – Gerenciamento completo de clientes e leads, <strong>Chatbot e IA Carmela</strong> – Inteligência artificial para otimizar o atendimento.
+          Todos os planos permitem a inclusão de módulos extras, sendo eles
+          <strong>Assinatura Eletrônica</strong> – Agilidade e segurança na
+          validação de documentos, <strong>CRM Jurídico</strong> – Gerenciamento
+          completo de clientes e leads, <strong>Chatbot e IA Carmela</strong> –
+          Inteligência artificial para otimizar o atendimento.
         </p>
       </div>
-
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const billingCycle = ref<'annual' | 'monthly'>('annual')
+const billingCycle = ref<"annual" | "monthly">("annual");
 </script>
 
 <style scoped>
 .pricing {
   padding: var(--section-spacing-md) 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 /* Top bar com Título e Toggle */
@@ -336,7 +405,7 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: 1px solid #e2e8f0;
   padding-bottom: var(--space-6);
   margin-bottom: var(--space-10);
   gap: var(--space-4);
@@ -351,7 +420,7 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 .pricing__title {
   font-size: clamp(2rem, 3.5vw, 2.5rem);
   font-weight: 800;
-  color: #0F172A;
+  color: #0f172a;
   margin: 0;
   letter-spacing: -0.03em;
 }
@@ -359,7 +428,7 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 .pricing__title-bar {
   width: 70px;
   height: 4px;
-  background-color: #0052CC;
+  background-color: #0052cc;
   border-radius: 2px;
   margin-top: 8px;
 }
@@ -367,8 +436,8 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 /* Toggle Switch Mensal / Anual */
 .pricing__billing-toggle {
   display: inline-flex;
-  background-color: #FFFFFF;
-  border: 1px solid #CBD5E1;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
   padding: 3px;
   gap: 2px;
@@ -387,8 +456,8 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 }
 
 .billing-toggle__btn--active {
-  background-color: #1E3A8A;
-  color: #FFFFFF;
+  background-color: #1e3a8a;
+  color: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -402,14 +471,16 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 
 /* Card Base */
 .pricing-card {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .pricing-card:hover {
@@ -419,7 +490,7 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 
 /* Card Em Destaque (Mais Vendido) */
 .pricing-card--featured {
-  border-color: #4361EE;
+  border-color: #4361ee;
   box-shadow: 0 10px 30px -10px rgba(67, 97, 238, 0.2);
 }
 
@@ -428,8 +499,8 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
   top: -1px;
   left: -1px;
   right: -1px;
-  background-color: #4361EE;
-  color: #FFFFFF;
+  background-color: #4361ee;
+  color: #ffffff;
   font-size: 11px;
   font-weight: 800;
   text-align: center;
@@ -452,7 +523,7 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 .pricing-card__name {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #0F172A;
+  color: #0f172a;
   margin: 0 0 6px;
   letter-spacing: -0.02em;
 }
@@ -460,7 +531,7 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 .pricing-card__target {
   font-size: 12px;
   line-height: 1.4;
-  color: #64748B;
+  color: #64748b;
   margin: 0;
 }
 
@@ -474,7 +545,7 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 
 .pricing-card__prefix {
   font-size: 11px;
-  color: #64748B;
+  color: #64748b;
   font-weight: 600;
   margin-bottom: 2px;
 }
@@ -488,13 +559,13 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 .pricing-card__currency {
   font-size: 1rem;
   font-weight: 800;
-  color: #0F172A;
+  color: #0f172a;
 }
 
 .pricing-card__amount {
   font-size: 1.85rem;
   font-weight: 800;
-  color: #0F172A;
+  color: #0f172a;
   letter-spacing: -0.03em;
   line-height: 1;
 }
@@ -508,7 +579,7 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 .pricing-card__annual-note {
   font-size: 10px;
   font-weight: 700;
-  color: #0F172A;
+  color: #0f172a;
   margin-top: 4px;
   display: flex;
   align-items: center;
@@ -518,7 +589,7 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 .pricing-card__custom-title {
   font-size: 1.6rem;
   font-weight: 800;
-  color: #0F172A;
+  color: #0f172a;
   letter-spacing: -0.02em;
 }
 
@@ -531,13 +602,13 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
   width: 100%;
   justify-content: center;
   font-weight: 700;
-  background-color: #4361EE !important;
-  color: #FFFFFF !important;
-  border-color: #4361EE !important;
+  background-color: #4361ee !important;
+  color: #ffffff !important;
+  border-color: #4361ee !important;
 }
 
 .pricing-card__btn:hover {
-  background-color: #3751D0 !important;
+  background-color: #3751d0 !important;
 }
 
 /* Feature List */
@@ -554,7 +625,7 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 .pricing-card__custom-intro {
   font-size: 12px;
   font-weight: 700;
-  color: #0F172A;
+  color: #0f172a;
   margin-bottom: 8px;
 }
 
@@ -569,7 +640,7 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 
 .pricing-card__check {
   font-weight: 800;
-  color: #0F172A;
+  color: #0f172a;
   font-size: 12px;
   line-height: 1.3;
   flex-shrink: 0;
@@ -577,7 +648,7 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
 
 .pricing-card__info-icon {
   font-size: 10px;
-  color: #94A3B8;
+  color: #94a3b8;
   display: inline-block;
   cursor: help;
   margin-left: 2px;
@@ -588,7 +659,7 @@ const billingCycle = ref<'annual' | 'monthly'>('annual')
   margin-top: var(--space-8);
   padding-top: var(--space-4);
   font-size: 11px;
-  color: #64748B;
+  color: #64748b;
   line-height: 1.6;
   text-align: center;
   max-width: 980px;
