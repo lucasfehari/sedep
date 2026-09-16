@@ -23,6 +23,9 @@
     <!-- 8. Carrossel de Clientes do Setor Público & Órgãos de Governo -->
     <SectionPublicClients />
 
+    <!-- 8b. Carrossel de Clientes do Setor Privado & Empresarial -->
+    <SectionPrivateClients />
+
     <!-- 9. Ecossistema de Tecnologia & Segurança -->
     <SectionEcosystem />
 

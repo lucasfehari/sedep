@@ -63,6 +63,9 @@
     <!-- Carrossel de Clientes do Setor Público & Governamental -->
     <SectionPublicClients />
 
+    <!-- Carrossel de Clientes do Setor Privado & Empresarial -->
+    <SectionPrivateClients />
+
     <SectionCTA />
   </div>
 </template>
