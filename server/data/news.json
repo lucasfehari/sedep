@@ -3,12 +3,14 @@
     "id": "art-001",
     "title": "A Revolução da Inteligência Artificial Generativa na Rotina dos Escritórios de Advocacia",
     "slug": "ia-generativa-rotina-escritorios-advocacia",
-    "category": "Inteligência Artificial",
+    "category": "Tecnologia da Informação",
     "tags": [
       "IA Jurídica",
       "Automação",
       "Produtividade",
-      "Sedep Faz"
+      "Sedep Faz",
+      "Tecnologia da Informação",
+      "Importante"
     ],
     "excerpt": "Como modelos preditivos e IA generativa estão redefinindo a triagem de publicações, elaboração de minutas e previsão de prazos na advocacia de alto rendimento.",
     "content": "<p>A transformação digital no meio jurídico atingiu um ponto de inflexão definitivo. A aplicação prática da <strong>Inteligência Artificial Generativa</strong> e dos modelos de análise preditiva deixou de ser um diferencial prospectivo para se consolidar como o alicerce operacional dos escritórios de advocacia que buscam escala e precisão inegociável.</p><h2>1. Do processamento passivo à antecipação estratégica</h2><p>Historicamente, a rotina de um escritório centrava-se no acompanhamento reativo: publicações eram lidas após a publicação em Diários Oficiais e prazos eram contados manualmente em planilhas ou sistemas legados. Com as ferramentas desenvolvidas pela <strong>SEDEP</strong>, a leitura e classificação de intimações tornam-se instantâneas.</p><blockquote><p>\"A tecnologia não substitui o raciocínio jurídico de excelência, mas elimina 100% da fricção operacional e do erro humano em tarefas repetitivas.\"</p></blockquote><h2>2. Segurança de dados e conformidade (LGPD & Cyber Security)</h2><p>Ao incorporar inteligência artificial na rotina jurídica, a custódia das informações confidenciais de clientes e processos é a principal diretriz. Ambientes corporativos em nuvem isolada e criptografia de ponta a ponta são requisitos indispensáveis para garantir que dados sensíveis nunca sejam expostos.</p><h2>3. O Futuro da Gestão Jurídica</h2><p>Com o ecossistema <strong>Sedep Faz</strong> e a inteligência do <strong>LegalLake</strong>, advogados ganham horas diárias dedicadas à estratégia processual e ao relacionamento consultivo com seus clientes.</p>",
@@ -37,12 +39,15 @@
     "id": "art-002",
     "title": "Legal Data Lakes: Como Analisar 800 Milhões de Processos em Tempo Real",
     "slug": "legal-data-lakes-analise-800-milhoes-processos",
-    "category": "Software Jurídico",
+    "category": "Civil",
     "tags": [
       "LegalLake",
       "Big Data",
       "Jurimetria",
-      "Analytics"
+      "Analytics",
+      "STF",
+      "STJ",
+      "Importante"
     ],
     "excerpt": "A jurimetria avançada e a estruturação de grandes volumes de dados processuais permitem antecipar decisões, estimar riscos e fundamentar teses com dados concretos.",
     "content": "<p>A tomada de decisão baseada em dados (<em>Data-Driven Law</em>) é hoje o divisor de águas entre bancas tradicionais e operações jurídicas de alta performance. Com o <strong>LegalLake da SEDEP</strong>, escritórios e departamentos jurídicos acessam um repositório estruturado de mais de 800 milhões de processos distribuídos em todos os tribunais do Brasil.</p><h2>O Poder da Jurimetria Aplicada</h2><p>Compreender o perfil decisório de magistrados, tendências jurisprudenciais em varas específicas e o histórico de partes litigantes reduz a incerteza jurídica e capacita negociações mais vantajosas.</p><h2>Vantagens Competitivas:</h2><ul><li>Mapeamento de tendências de julgamento por tribunal e comarca</li><li>Auditoria preditiva de passivo judicial para grandes corporações</li><li>Consultas ultra-rápidas através de indexação vetorial e semântica</li></ul>",
@@ -71,12 +76,14 @@
     "id": "art-003",
     "title": "Cyber Security e LGPD na Advocacia: Diretrizes para Blindagem de Escritórios",
     "slug": "cyber-security-lgpd-blindagem-escritorios-advocacia",
-    "category": "Cyber Security",
+    "category": "LGPD",
     "tags": [
       "Segurança da Informação",
       "LGPD",
       "Proteção de Dados",
-      "SOC"
+      "SOC",
+      "Direito",
+      "Importante"
     ],
     "excerpt": "Escritórios de advocacia são alvos prioritários de ciberataques. Entenda os pilares de segurança, criptografia e conformidade necessários para blindar sua operação.",
     "content": "<p>A guarda de documentos confidenciais, estratégias corporativas, segredos de negócio e dados pessoais sensíveis coloca os escritórios de advocacia no radar de atacantes cibernéticos e ransomwares. Garantir a integridade dessa custódia é uma exigência ética, regulatória e comercial.</p><h2>Pilares da Blindagem Digital SEDEP</h2><p>Na SEDEP, a segurança da informação é implementada como arquitetura de <em>Zero Trust</em>, garantindo que nenhum acesso seja concedido sem verificação contínua e autenticação robusta.</p>",
@@ -98,6 +105,78 @@
       "canonicalUrl": "https://www.sedep.com.br/noticias/cyber-security-lgpd-blindagem-escritorios-advocacia",
       "robots": "index, follow",
       "ogImage": "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop",
+      "schemaType": "NewsArticle"
+    }
+  },
+  {
+    "id": "art-004",
+    "title": "TST Uniformiza Entendimento sobre Acordos Coletivos e Segurança Jurídica",
+    "slug": "tst-uniformiza-entendimento-acordos-coletivos",
+    "category": "Trabalhista",
+    "tags": [
+      "TST",
+      "Trabalhista",
+      "Direito",
+      "Importante",
+      "SP",
+      "DF"
+    ],
+    "excerpt": "Tribunal Superior do Trabalho consolida parâmetros sobre a prevalência do negociado sobre o legislado e impactos diretos no contencioso corporativo.",
+    "content": "<p>Em recente julgamento de repercussão geral, o <strong>Tribunal Superior do Trabalho (TST)</strong> reafirmou a validade constitucional de cláusulas em acordos e convenções coletivas, trazendo maior previsibilidade para os departamentos jurídicos.</p><h2>Segurança nas Relações de Trabalho</h2><p>A decisão reforça a necessidade de auditoria preventiva e suporte de software jurídico para monitoramento dos precedentes nos tribunais regionais.</p>",
+    "coverImage": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop",
+    "author": {
+      "name": "Equipe Jurídica SEDEP",
+      "role": "Análise Jurisprudencial",
+      "avatar": "/sedep-branco.png"
+    },
+    "status": "published",
+    "publishedAt": "2026-08-05T11:00:00.000Z",
+    "updatedAt": "2026-08-05T11:00:00.000Z",
+    "readingTime": 4,
+    "views": 310,
+    "seo": {
+      "metaTitle": "TST Uniformiza Entendimento sobre Acordos Coletivos | SEDEP",
+      "metaDescription": "Análise do recente julgamento do TST sobre acordos coletivos e a atuação estratégica dos escritórios trabalhistas.",
+      "focusKeyword": "TST acordos coletivos trabalhista",
+      "canonicalUrl": "https://www.sedep.com.br/noticias/tst-uniformiza-entendimento-acordos-coletivos",
+      "robots": "index, follow",
+      "ogImage": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop",
+      "schemaType": "NewsArticle"
+    }
+  },
+  {
+    "id": "art-005",
+    "title": "TRF3 e Tribunais Regionais Federais Expandem Triagem Automatizada de Intimações",
+    "slug": "trf3-tribunais-federais-triagem-intimacoes",
+    "category": "Previdenciário",
+    "tags": [
+      "TRFs",
+      "TRF3",
+      "Previdenciário",
+      "Tributário",
+      "MS",
+      "SP"
+    ],
+    "excerpt": "Avanço no processamento eletrônico dos TRFs amplia a velocidade de publicação de despachos e exige triagem imediata de prazos nas bancas jurídicas.",
+    "content": "<p>A integração entre os sistemas dos Tribunais Regionais Federais (TRF1 a TRF6) e as plataformas automatizadas de captura como a <strong>SEDEP</strong> tem garantido que intimações judiciais sejam entregues e tratadas em tempo recorde pelos advogados.</p><h2>Agilidade no Acompanhamento de Precatórios e Prazos</h2><p>Com a automação do fluxo no Sedep Faz, os escritórios eliminam riscos de perdas de prazo e organizam o contencioso federal com máxima precisão.</p>",
+    "coverImage": "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=1200&auto=format&fit=crop",
+    "author": {
+      "name": "Equipe SEDEP Notícias",
+      "role": "Redação Jurídica",
+      "avatar": "/sedep-branco.png"
+    },
+    "status": "published",
+    "publishedAt": "2026-08-01T08:30:00.000Z",
+    "updatedAt": "2026-08-01T08:30:00.000Z",
+    "readingTime": 3,
+    "views": 275,
+    "seo": {
+      "metaTitle": "TRFs Expandem Triagem Automatizada de Intimações | SEDEP",
+      "metaDescription": "Como os Tribunais Regionais Federais e a SEDEP aceleram o tratamento de intimações e prazos processuais.",
+      "focusKeyword": "TRF3 TRFs intimações prazos",
+      "canonicalUrl": "https://www.sedep.com.br/noticias/trf3-tribunais-federais-triagem-intimacoes",
+      "robots": "index, follow",
+      "ogImage": "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=1200&auto=format&fit=crop",
       "schemaType": "NewsArticle"
     }
   }

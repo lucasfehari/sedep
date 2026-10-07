@@ -218,7 +218,7 @@
             <!-- Conteúdos / Notícias -->
             <li class="header__nav-item">
               <NuxtLink to="/noticias" class="header__nav-link"
-                >Notícias & Insights</NuxtLink
+                >Notícias</NuxtLink
               >
             </li>
 
@@ -231,17 +231,91 @@
           </ul>
         </nav>
 
-        <!-- Ações do Header SaaS (Login Outline + Primary Coral) -->
+        <!-- Ações do Header SaaS (Login Hover Dropdown + Primary Coral) -->
         <div class="header__actions">
-          <BaseButton
-            href="https://app.faz.adv.br/"
-            target="_blank"
-            rel="noopener"
-            variant="ghost"
-            size="sm"
+          <div
+            class="header__login-wrapper"
+            @mouseenter="openDropdown('login')"
+            @mouseleave="closeDropdown"
           >
-            Entrar
-          </BaseButton>
+            <button
+              type="button"
+              class="header__login-trigger"
+              :aria-expanded="activeDropdown === 'login'"
+              @click="toggleDropdown('login')"
+            >
+              <span>Entrar</span>
+              <svg
+                class="header__chevron"
+                :class="{ 'header__chevron--open': activeDropdown === 'login' }"
+                width="10"
+                height="6"
+                viewBox="0 0 10 6"
+                fill="none"
+              >
+                <path
+                  d="M1 1L5 5L9 1"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <!-- Dropdown Menu de Login (Acessar Sedep Publicações & Acessar o Faz) -->
+            <div
+              class="header__login-popover"
+              :class="{ 'header__login-popover--open': activeDropdown === 'login' }"
+              role="menu"
+              aria-label="Opções de acesso"
+            >
+              <a
+                href="https://www.sedep.com.br/area-do-cliente/"
+                target="_blank"
+                rel="noopener"
+                class="header__login-btn header__login-btn--pub"
+                @click="closeDropdownNow"
+              >
+                <svg
+                  class="header__login-lock-icon"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="15"
+                  height="15"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
+                  />
+                </svg>
+                <span>Acessar Sedep Publicações</span>
+              </a>
+
+              <a
+                href="https://app.faz.adv.br/"
+                target="_blank"
+                rel="noopener"
+                class="header__login-btn header__login-btn--faz"
+                @click="closeDropdownNow"
+              >
+                <svg
+                  class="header__login-lock-icon"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="15"
+                  height="15"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
+                  />
+                </svg>
+                <span>Acessar o Faz</span>
+              </a>
+            </div>
+          </div>
+
           <BaseButton
             to="/experimente"
             variant="secondary"
@@ -329,7 +403,7 @@
             to="/noticias"
             class="header__mobile-link"
             @click="closeMobileMenu"
-            >Notícias & Insights</NuxtLink
+            >Notícias</NuxtLink
           >
           <NuxtLink
             to="/atendimento"
@@ -341,22 +415,60 @@
         <div class="header__mobile-actions">
           <BaseButton
             to="/experimente"
-            variant="primary"
+            variant="secondary"
             size="md"
+            class="header__btn-coral"
             @click="closeMobileMenu"
           >
-            Experimentar o Faz grátis
+            EXPERIMENTE AGORA
           </BaseButton>
-          <BaseButton
-            href="https://app.faz.adv.br/"
-            target="_blank"
-            rel="noopener"
-            variant="ghost"
-            size="md"
-            @click="closeMobileMenu"
-          >
-            Fazer login no Faz
-          </BaseButton>
+
+          <!-- Opções de Login Mobile -->
+          <div class="header__mobile-login-box">
+            <a
+              href="https://www.sedep.com.br/area-do-cliente/"
+              target="_blank"
+              rel="noopener"
+              class="header__login-btn header__login-btn--pub"
+              @click="closeMobileMenu"
+            >
+              <svg
+                class="header__login-lock-icon"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="15"
+                height="15"
+                aria-hidden="true"
+              >
+                <path
+                  d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
+                />
+              </svg>
+              <span>Acessar Sedep Publicações</span>
+            </a>
+
+            <a
+              href="https://app.faz.adv.br/"
+              target="_blank"
+              rel="noopener"
+              class="header__login-btn header__login-btn--faz"
+              @click="closeMobileMenu"
+            >
+              <svg
+                class="header__login-lock-icon"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="15"
+                height="15"
+                aria-hidden="true"
+              >
+                <path
+                  d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
+                />
+              </svg>
+              <span>Acessar o Faz</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -609,6 +721,128 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+}
+
+/* Login Popover */
+.header__login-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.header__login-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md, 8px);
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: var(--color-ink, #0f172a);
+  font-size: var(--text-sm, 14px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast, 0.2s ease);
+}
+
+.header__login-trigger:hover,
+.header__login-wrapper:hover .header__login-trigger {
+  background-color: var(--color-surface-alt, #f8fafc);
+  color: var(--color-faz, #1848b8);
+}
+
+.header__chevron--open {
+  transform: rotate(180deg);
+}
+
+.header__login-popover {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background-color: #1a2a54;
+  border: 1.5px solid #283d73;
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 250px;
+  box-shadow: 0 12px 32px rgba(10, 20, 48, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: all 0.2s ease;
+  z-index: var(--z-dropdown, 100);
+}
+
+/* Ponte invisível para manter o hover ativo entre o botão e o popover */
+.header__login-popover::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.header__login-popover--open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.header__login-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  color: #ffffff !important;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, transform 0.15s ease, filter 0.15s ease;
+}
+
+.header__login-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.header__login-btn--pub {
+  background-color: #2747ad;
+}
+
+.header__login-btn--pub:hover {
+  background-color: #1f3b99;
+}
+
+.header__login-btn--faz {
+  background-color: #0b9161;
+}
+
+.header__login-btn--faz:hover {
+  background-color: #087950;
+}
+
+.header__login-lock-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  fill: #ffffff;
+}
+
+.header__mobile-login-box {
+  background-color: #1a2a54;
+  border: 1.5px solid #283d73;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
 }
 
 .header__btn-coral {

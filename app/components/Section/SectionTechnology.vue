@@ -25,11 +25,11 @@
               Inteligência Artificial que simplifica a sua rotina
             </h3>
             <p class="feature-card__desc">
-              As automações do Sedep Faz são parceiras na organização de tarefas, tratamento e triagem de publicações e geração de prazos, deixando sua rotina sem sobrecarga.
+              As automações da Sedep Faz são parceiras na organização de tarefas, tratamento e triagem de publicações e geração de prazos, deixando sua rotina sem sobrecarga.
             </p>
             <div class="feature-card__actions">
               <BaseButton to="/experimente" variant="ghost" size="md">
-                Experimente o Sedep Faz
+                Experimente a Sedep Faz
               </BaseButton>
             </div>
           </div>

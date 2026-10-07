@@ -5,7 +5,7 @@
       <!-- Header -->
       <div class="news-section__header">
         <div>
-          <p class="section-label">Notícias e Insights</p>
+          <p class="section-label">SEDEP Notícias</p>
           <h2 id="news-heading" class="news-section__title">
             Acompanhe o que está acontecendo.
           </h2>
@@ -60,7 +60,7 @@
             </h3>
             <p v-if="featured.excerpt" class="news-featured__excerpt">{{ featured.excerpt }}</p>
             <NuxtLink :to="`/noticias/${featured.slug}`" class="news-link-arrow">
-              Ler artigo completo →
+              Ler notícia completa →
             </NuxtLink>
           </div>
         </article>
@@ -94,7 +94,7 @@
                 </NuxtLink>
               </h3>
               <NuxtLink :to="`/noticias/${article.slug}`" class="news-link-arrow news-link-arrow--sm">
-                Ler →
+                Ler notícia →
               </NuxtLink>
             </div>
           </article>

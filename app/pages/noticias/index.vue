@@ -3,59 +3,175 @@
     <!-- Header Hero -->
     <section class="news-hero" aria-labelledby="noticias-heading">
       <div class="container">
-        <p class="section-label">SEDEP Insights & Notícias</p>
+        <p class="section-label">SEDEP Notícias</p>
         <h1 id="noticias-heading" class="news-hero__title">
-          Atualizações sobre tecnologia, inteligência jurídica e inovação.
+          Atualizações diárias com inteligência das principais notícias dos tribunais de todo o Brasil
         </h1>
         <p class="news-hero__sub lead">
-          Artigos técnicos, tendências do mercado jurídico, novidades de
-          produtos e guias práticos desenvolvidos pela equipe SEDEP.
+          Notícias, artigos técnicos, tendências de decisões jurídicas atualizadas diariamente de todo o Brasil.
         </p>
 
-        <!-- Filtros de Categoria -->
-        <div
-          class="news-categories-nav"
-          role="group"
-          aria-label="Filtrar por categoria"
-        >
-          <button
-            type="button"
-            class="category-filter-btn"
-            :class="{ 'category-filter-btn--active': selectedCategory === '' }"
-            @click="selectedCategory = ''"
-          >
-            Todos
-          </button>
-          <button
-            v-for="cat in dynamicCategories"
-            :key="cat"
-            type="button"
-            class="category-filter-btn"
-            :class="{ 'category-filter-btn--active': selectedCategory === cat }"
-            @click="selectedCategory = cat"
-          >
-            {{ cat }}
-          </button>
-        </div>
+        <!-- Painel Estruturado de Filtros -->
+        <div class="news-filter-panel" role="search" aria-label="Filtros de notícias">
+          <!-- Box 1: Jurisdições & Tribunais -->
+          <div class="news-filter-box">
+            <!-- Tribunais Superiores e Federais -->
+            <div class="news-filter-group">
+              <div class="news-filter-group__header">
+                <span class="news-filter-group__icon">🏛️</span>
+                <span class="news-filter-group__title">Tribunais Superiores e Federais</span>
+              </div>
+              <div class="news-pills-list">
+                <button
+                  v-for="court in courtList"
+                  :key="court"
+                  type="button"
+                  class="category-filter-btn"
+                  :class="{ 'category-filter-btn--active': selectedCourt === court }"
+                  @click="toggleCourt(court)"
+                >
+                  {{ court }}
+                </button>
+              </div>
+            </div>
 
-        <!-- Busca rápida -->
-        <div class="news-search-box">
-          <span class="news-search-box__icon">🔍</span>
-          <input
-            v-model="searchQuery"
-            type="search"
-            placeholder="Buscar artigos..."
-            class="news-search-box__input"
-            aria-label="Buscar artigos"
-          />
-          <button
-            v-if="searchQuery"
-            @click="searchQuery = ''"
-            class="news-search-box__clear"
-            aria-label="Limpar busca"
-          >
-            ✕
-          </button>
+            <div class="news-filter-box__divider" />
+
+            <!-- Estados (UFs) -->
+            <div class="news-filter-group">
+              <div class="news-filter-group__header">
+                <span class="news-filter-group__icon">📍</span>
+                <span class="news-filter-group__title">Estados (UFs)</span>
+              </div>
+              <div class="news-pills-list">
+                <button
+                  type="button"
+                  class="category-filter-btn"
+                  :class="{ 'category-filter-btn--active': selectedState === '' }"
+                  @click="selectedState = ''"
+                >
+                  Todos
+                </button>
+                <button
+                  v-for="uf in stateList"
+                  :key="uf"
+                  type="button"
+                  class="category-filter-btn"
+                  :class="{ 'category-filter-btn--active': selectedState === uf }"
+                  @click="toggleState(uf)"
+                >
+                  {{ uf }}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box 2: Temas Jurídicos -->
+          <div class="news-filter-box news-filter-box--themes">
+            <div class="news-filter-group">
+              <div class="news-filter-group__header">
+                <span class="news-filter-group__icon">⚖️</span>
+                <span class="news-filter-group__title">Temas & Áreas do Direito</span>
+              </div>
+              <div class="news-pills-list">
+                <!-- Somente Importantes (Destaque) -->
+                <button
+                  type="button"
+                  class="category-filter-btn category-filter-btn--important"
+                  :class="{ 'category-filter-btn--important-active': onlyImportant }"
+                  @click="onlyImportant = !onlyImportant"
+                >
+                  ⭐ Somente importantes
+                </button>
+
+                <button
+                  v-for="theme in allThemes"
+                  :key="theme"
+                  type="button"
+                  class="category-filter-btn"
+                  :class="{ 'category-filter-btn--active': selectedTheme === theme }"
+                  @click="toggleTheme(theme)"
+                >
+                  {{ theme }}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Barra de Busca Rápida + Resumo de Filtros Ativos -->
+          <div class="news-filter-bar">
+            <!-- Busca rápida -->
+            <div class="news-search-box">
+              <span class="news-search-box__icon">🔍</span>
+              <input
+                v-model="searchQuery"
+                type="search"
+                placeholder="Buscar notícias por palavra-chave..."
+                class="news-search-box__input"
+                aria-label="Buscar notícias"
+              />
+              <button
+                v-if="searchQuery"
+                @click="searchQuery = ''"
+                class="news-search-box__clear"
+                aria-label="Limpar busca"
+              >
+                ✕
+              </button>
+            </div>
+
+            <!-- Chips de filtros ativos -->
+            <div v-if="hasActiveFilters" class="news-active-chips">
+              <span class="news-active-chips__label">Ativos:</span>
+              <button
+                v-if="selectedCourt"
+                class="news-chip"
+                @click="selectedCourt = ''"
+                title="Remover tribunal"
+              >
+                🏛️ {{ selectedCourt }} ✕
+              </button>
+              <button
+                v-if="selectedState"
+                class="news-chip"
+                @click="selectedState = ''"
+                title="Remover estado"
+              >
+                📍 {{ selectedState }} ✕
+              </button>
+              <button
+                v-if="selectedTheme"
+                class="news-chip"
+                @click="selectedTheme = ''"
+                title="Remover tema"
+              >
+                ⚖️ {{ selectedTheme }} ✕
+              </button>
+              <button
+                v-if="onlyImportant"
+                class="news-chip news-chip--important"
+                @click="onlyImportant = false"
+                title="Remover somente importantes"
+              >
+                ⭐ Importantes ✕
+              </button>
+              <button
+                v-if="searchQuery"
+                class="news-chip"
+                @click="searchQuery = ''"
+                title="Limpar busca"
+              >
+                "{{ searchQuery }}" ✕
+              </button>
+              <button
+                type="button"
+                class="news-chip news-chip--clear-all"
+                @click="clearFilters"
+              >
+                Limpar todos
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -76,7 +192,7 @@
         <template v-else-if="filteredArticles.length > 0">
           <!-- Destaque: primeiro artigo -->
           <article
-            v-if="!selectedCategory && !searchQuery && heroArticle"
+            v-if="!hasActiveFilters && heroArticle"
             class="news-hero-card"
           >
             <NuxtLink
@@ -120,7 +236,7 @@
                 :to="`/noticias/${heroArticle.slug}`"
                 class="news-hero-card__cta"
               >
-                Ler artigo completo →
+                Ler notícia completa →
               </NuxtLink>
             </div>
           </article>
@@ -130,7 +246,7 @@
             class="news-grid"
             :class="{
               'news-grid--with-hero':
-                !selectedCategory && !searchQuery && heroArticle,
+                !hasActiveFilters && heroArticle,
             }"
           >
             <article
@@ -186,7 +302,7 @@
                     :to="`/noticias/${article.slug}`"
                     class="news-card__read-more"
                   >
-                    Ler artigo →
+                    Ler notícia →
                   </NuxtLink>
                 </div>
               </div>
@@ -196,20 +312,18 @@
           <!-- Sem mais resultados -->
           <p
             v-if="
-              filteredArticles.length === 0 && (selectedCategory || searchQuery)
+              filteredArticles.length === 0 && hasActiveFilters
             "
             class="news-no-results"
           >
-            Nenhum resultado para "{{ searchQuery || selectedCategory }}".
+            Nenhuma notícia encontrada com os filtros selecionados.
           </p>
         </template>
 
         <!-- Fallback Sem Artigos -->
         <div v-else class="news-empty">
           <p>
-            Nenhuma notícia encontrada{{
-              selectedCategory ? ` em "${selectedCategory}"` : ""
-            }}{{ searchQuery ? ` para "${searchQuery}"` : "" }}.
+            Nenhuma notícia encontrada com os filtros selecionados.
           </p>
           <button @click="clearFilters" class="btn-clear-filter">
             Limpar filtros
@@ -226,12 +340,12 @@ import { ref, computed, onMounted } from "vue";
 definePageMeta({ layout: "default" });
 
 useSeoMeta({
-  title: "Notícias & Artigos Jurídicos | SEDEP",
+  title: "SEDEP Notícias | Atualizações dos Tribunais do Brasil",
   description:
-    "Acompanhe as atualizações da SEDEP sobre inteligência artificial no direito, software jurídico, LGPD, Cyber Security e tendências da advocacia.",
-  ogTitle: "Notícias & Insights Jurídicos — SEDEP",
+    "Atualizações diárias com inteligência das principais notícias dos tribunais de todo o Brasil. Notícias, artigos técnicos e tendências de decisões jurídicas.",
+  ogTitle: "SEDEP Notícias — Tribunais de Todo o Brasil",
   ogDescription:
-    "Artigos técnicos e atualizações sobre tecnologia jurídica, IA, Cyber Security e gestão de escritórios.",
+    "Atualizações diárias com inteligência das principais notícias dos tribunais de todo o Brasil.",
   ogType: "website",
 });
 
@@ -249,7 +363,51 @@ interface Article {
 
 const loading = ref(true);
 const articles = ref<Article[]>([]);
-const selectedCategory = ref("");
+
+// Listas de filtros solicitadas
+const courtList = [
+  "STF",
+  "STJ",
+  "TST",
+  "CNJ",
+  "TRFs",
+  "TRF1",
+  "TRF2",
+  "TRF3",
+  "TRF4",
+  "TRF5",
+  "TRF6",
+];
+
+const stateList = [
+  "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA",
+  "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN",
+  "RO", "RR", "RS", "SC", "SE", "SP", "TO",
+];
+
+const baseThemes = [
+  "Administrativo",
+  "Agrário",
+  "Ambiental",
+  "Civil",
+  "Comercial ou Empresarial",
+  "Consumidor",
+  "Direito",
+  "Família",
+  "LGPD",
+  "Mediação, conciliação e arbitragem",
+  "Penal ou Criminal",
+  "Previdenciário",
+  "Tecnologia da Informação",
+  "Trabalhista",
+  "Tributário",
+  "União Estável",
+];
+
+const selectedCourt = ref("");
+const selectedState = ref("");
+const selectedTheme = ref("");
+const onlyImportant = ref(false);
 const searchQuery = ref("");
 
 // Categorias dinâmicas extraídas dos artigos retornados pela API
@@ -258,13 +416,114 @@ const dynamicCategories = computed(() => {
   return Array.from(cats);
 });
 
+const allThemes = computed(() => {
+  const set = new Set(baseThemes);
+  for (const cat of dynamicCategories.value) {
+    if (!stateList.includes(cat) && !courtList.includes(cat) && cat !== "Importante") {
+      set.add(cat);
+    }
+  }
+  return Array.from(set);
+});
+
+const hasActiveFilters = computed(() => {
+  return !!(
+    selectedCourt.value ||
+    selectedState.value ||
+    selectedTheme.value ||
+    onlyImportant.value ||
+    searchQuery.value.trim()
+  );
+});
+
+function toggleCourt(court: string) {
+  selectedCourt.value = selectedCourt.value === court ? "" : court;
+}
+
+function toggleState(uf: string) {
+  selectedState.value = selectedState.value === uf ? "" : uf;
+}
+
+function toggleTheme(theme: string) {
+  selectedTheme.value = selectedTheme.value === theme ? "" : theme;
+}
+
+function clearFilters() {
+  selectedCourt.value = "";
+  selectedState.value = "";
+  selectedTheme.value = "";
+  onlyImportant.value = false;
+  searchQuery.value = "";
+}
+
 const filteredArticles = computed(() => {
   let result = articles.value;
-  if (selectedCategory.value) {
-    result = result.filter(
-      (a) => a.category?.toLowerCase() === selectedCategory.value.toLowerCase(),
-    );
+
+  // Filtro Somente Importantes
+  if (onlyImportant.value) {
+    result = result.filter((a) => {
+      const hasImportantTag = a.tags?.some((t) =>
+        t.toLowerCase().includes("importante") ||
+        t.toLowerCase().includes("destaque"),
+      );
+      const isImportantCat = a.category?.toLowerCase() === "importante";
+      return hasImportantTag || isImportantCat;
+    });
   }
+
+  // Filtro por Tribunal
+  if (selectedCourt.value) {
+    const c = selectedCourt.value.toLowerCase();
+    result = result.filter((a) => {
+      if (c === "trfs") {
+        return (
+          a.tags?.some((t) => t.toLowerCase().startsWith("trf")) ||
+          a.category?.toLowerCase().startsWith("trf") ||
+          a.title.toLowerCase().includes("trf") ||
+          a.excerpt.toLowerCase().includes("trf")
+        );
+      }
+      return (
+        a.category?.toLowerCase() === c ||
+        a.tags?.some((t) => t.toLowerCase() === c) ||
+        a.title.toLowerCase().includes(c) ||
+        a.excerpt.toLowerCase().includes(c)
+      );
+    });
+  }
+
+  // Filtro por Estado
+  if (selectedState.value) {
+    const s = selectedState.value.toLowerCase();
+    result = result.filter((a) => {
+      const tagMatch = a.tags?.some((t) => t.toLowerCase() === s);
+      const catMatch = a.category?.toLowerCase() === s;
+      const textMatch =
+        new RegExp(`\\b${s}\\b`, "i").test(a.title) ||
+        new RegExp(`\\b${s}\\b`, "i").test(a.excerpt);
+      return tagMatch || catMatch || textMatch;
+    });
+  }
+
+  // Filtro por Tema
+  if (selectedTheme.value) {
+    const th = selectedTheme.value.toLowerCase();
+    result = result.filter((a) => {
+      const catMatch =
+        a.category?.toLowerCase().includes(th) ||
+        th.includes(a.category?.toLowerCase());
+      const tagMatch = a.tags?.some(
+        (t) =>
+          t.toLowerCase().includes(th) || th.includes(t.toLowerCase()),
+      );
+      const textMatch =
+        a.title.toLowerCase().includes(th) ||
+        a.excerpt.toLowerCase().includes(th);
+      return catMatch || tagMatch || textMatch;
+    });
+  }
+
+  // Busca rápida de texto
   if (searchQuery.value.trim()) {
     const q = searchQuery.value.trim().toLowerCase();
     result = result.filter(
@@ -274,13 +533,14 @@ const filteredArticles = computed(() => {
         a.tags?.some((t) => t.toLowerCase().includes(q)),
     );
   }
+
   return result;
 });
 
 const heroArticle = computed(() => filteredArticles.value[0] || null);
 const gridArticles = computed(() => {
-  // Se há hero card, remove o primeiro da grade
-  if (!selectedCategory.value && !searchQuery.value && heroArticle.value) {
+  // Se há hero card e não há filtros específicos, remove o primeiro da grade
+  if (!hasActiveFilters.value && heroArticle.value) {
     return filteredArticles.value.slice(1);
   }
   return filteredArticles.value;
@@ -293,11 +553,6 @@ function formatDate(dateStr?: string): string {
     month: "long",
     year: "numeric",
   });
-}
-
-function clearFilters() {
-  selectedCategory.value = "";
-  searchQuery.value = "";
 }
 
 onMounted(async () => {
@@ -358,37 +613,165 @@ onMounted(async () => {
   margin-bottom: var(--space-8);
 }
 
-/* ===== FILTROS ===== */
-.news-categories-nav {
+/* ===== PAINEL DE FILTROS ESTRUTURADO ===== */
+.news-filter-panel {
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+}
+
+.news-filter-box {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(24, 72, 184, 0.16);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 4px 16px rgba(24, 72, 184, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.news-filter-box__divider {
+  height: 1px;
+  background: rgba(24, 72, 184, 0.1);
+  margin: 0.15rem 0;
+}
+
+.news-filter-group {
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
+}
+
+.news-filter-group__header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-faz, #1848b8);
+}
+
+.news-filter-group__icon {
+  font-size: 0.85rem;
+}
+
+.news-pills-list {
+  display: flex;
   flex-wrap: wrap;
-  margin-bottom: 1.25rem;
+  gap: 0.4rem;
 }
 
 .category-filter-btn {
   background-color: rgba(24, 72, 184, 0.08);
-  color: var(--color-faz);
-  border: 1px solid rgba(24, 72, 184, 0.2);
-  padding: 0.4rem 1rem;
+  color: var(--color-faz, #1848b8);
+  border: 1px solid rgba(24, 72, 184, 0.18);
+  padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full, 9999px);
-  font-size: var(--text-sm);
+  font-size: 0.8125rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   white-space: nowrap;
 }
 
 .category-filter-btn:hover {
-  background-color: rgba(24, 72, 184, 0.14);
-  color: var(--color-faz);
+  background-color: rgba(24, 72, 184, 0.16);
+  border-color: var(--color-faz);
+  transform: translateY(-1px);
 }
 
 .category-filter-btn--active {
-  background-color: var(--color-faz) !important;
+  background-color: var(--color-faz, #1848b8) !important;
   color: #ffffff !important;
   font-weight: 700;
   border-color: var(--color-faz) !important;
+  box-shadow: 0 2px 8px rgba(24, 72, 184, 0.35);
+}
+
+/* Destaque para Somente Importantes */
+.category-filter-btn--important {
+  background-color: rgba(245, 158, 11, 0.12);
+  color: #b45309;
+  border-color: rgba(245, 158, 11, 0.35);
+  font-weight: 600;
+}
+
+.category-filter-btn--important:hover {
+  background-color: rgba(245, 158, 11, 0.22);
+  border-color: #d97706;
+  color: #92400e;
+}
+
+.category-filter-btn--important-active {
+  background-color: #d97706 !important;
+  color: #ffffff !important;
+  border-color: #d97706 !important;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+}
+
+/* ===== BARRA INFERIOR DE FILTROS & BUSCA ===== */
+.news-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.news-active-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.news-active-chips__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-ink-muted, #64748b);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.news-chip {
+  background: rgba(24, 72, 184, 0.1);
+  color: var(--color-faz, #1848b8);
+  border: 1px solid rgba(24, 72, 184, 0.25);
+  border-radius: 9999px;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.news-chip:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border-color: #f87171;
+}
+
+.news-chip--important {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.news-chip--clear-all {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fca5a5;
+}
+
+.news-chip--clear-all:hover {
+  background: #fecaca;
 }
 
 /* ===== SEARCH ===== */
@@ -396,17 +779,21 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(24, 72, 184, 0.07);
-  border: 1px solid rgba(24, 72, 184, 0.18);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(24, 72, 184, 0.22);
   border-radius: 10px;
-  padding: 0.6rem 1rem;
-  max-width: 400px;
+  padding: 0.55rem 0.9rem;
+  min-width: 280px;
+  flex: 1;
+  max-width: 480px;
   transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
 }
 
 .news-search-box:focus-within {
-  background: rgba(24, 72, 184, 0.12);
+  background: #ffffff;
   border-color: var(--color-faz);
+  box-shadow: 0 0 0 3px rgba(24, 72, 184, 0.15);
 }
 
 .news-search-box__icon {
